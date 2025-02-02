@@ -21,7 +21,10 @@ Now, the basic building block for thmbox environments is `thmbox`:
 
 It can be referenced (see @basic-box).
 ```
-![Basic thmbox](gallery/g1.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="gallery/d1.svg">
+  <img src="gallery/l1.svg">
+</picture>
 
 Using the `color`, `variant`, and `title` parameters, we can style this box:
 ```typ
@@ -33,7 +36,10 @@ Using the `color`, `variant`, and `title` parameters, we can style this box:
     A statement can only be believed if it is proven. 
 ]
 ```
-![Important Theorem](gallery/g2.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="gallery/d2.svg">
+  <img src="gallery/l2.svg">
+</picture>
 
 To prove this statement, we can follow up with a `proof`:
 ```typ
@@ -41,7 +47,10 @@ To prove this statement, we can follow up with a `proof`:
     Proven by obviousness.
 ]
 ```
-![Proof](gallery/g3.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="gallery/d3.svg">
+  <img src="gallery/l3.svg">
+</picture>
 
 For your environments, Thmbox actually ships with a variety of predefined ones, for theorems, corollaries, definitions, examples, etc:
 
@@ -90,7 +99,10 @@ For your environments, Thmbox actually ships with a variety of predefined ones, 
     This is created using #raw("#axiom[...]", lang: "typ").
 ]
 ```-->
-![All predefined environments](gallery/g4.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="gallery/d4.svg">
+  <img src="gallery/l4.svg">
+</picture>
 
 ## Usage Notes
 
@@ -110,7 +122,10 @@ The recommended way of implementing new types of thmboxes is like this:
     This is in fact very important!
 ]
 ```
-!["Important" box](gallery/g5.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="gallery/d5.svg">
+  <img src="gallery/l5.svg">
+</picture>
 
 Of course, deriving from `thmbox` is just as good, but the predefined environments have some other parameters already set as well.
 
@@ -132,7 +147,10 @@ As set rules don't work with user-defined functions, a similar effect can be ach
     This definition has a yellow background!
 ]
 ```
-![Yellow background](gallery/g6.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="gallery/d6.svg">
+  <img src="gallery/l6.svg">
+</picture>
 
 The recommended font for documents using this package is New Computer Modern (shipped with Typst).
 
