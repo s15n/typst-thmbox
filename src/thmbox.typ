@@ -64,7 +64,7 @@
 /// Additionally, a colored bar will be on the left, marking the limits of the box.
 /// 
 /// Everything is contained in a `figure`, so `set` or `show` rules that affect figures also affect the thmbox.
-/// Things like breaking over pages or spanning multiple colums must be configured using this technique.
+/// Things like breaking over pages or spanning multiple columns must be configured using this technique.
 ///
 /// - color (color): The color of the colored bar and the title
 /// - variant (content): The variant of the box. For example, "Theorem" or "Definition", etc.
