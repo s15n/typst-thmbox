@@ -8,3 +8,4 @@ description = "Creating beautiful theorem environments in typst with ease."
 repository = "https://github.com/s15n/typst-thmbox"
 keywords = [ "theorem", "proof" ]
 categories = [ "components" ] # "languages"
+exclude = ["/gallery/*"]
