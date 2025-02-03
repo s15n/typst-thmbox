@@ -1,108 +1,126 @@
-#let rtl-list = ("ar",)
+/*
+For future consistency we will just order the languages
+alphabetically. The exception being English, which will
+go first.
+
+If you speak a language that is not already here (or you
+spotted a mistake) you are more than welcome to contribute
+your changes!
+
+And thank you to all who already did!
+*/
+
+/* Start of the part containing the translations */
 
 #let variants = (
   "theorem": (
     "en": "Theorem",
+    "ca": "Teorema",
     "de": "Satz",
     "fr": "Théorème",
     "es": "Teorema",
-    "ca": "Teorema",
   ),
   "proposition": (
     "en": "Proposition",
+    "ca": "Proposició",
     "de": "Proposition",
     "fr": "Proposition",
     "es": "Proposición",
-    "ca": "Proposició",
   ),
   "lemma": (
     "en": "Lemma",
+    "ca": "Lema",
     "de": "Lemma",
     "fr": "Lemme",
     "es": "Lema",
-    "ca": "Lema",
   ),
   "corollary": (
     "en": "Corollary",
+    "ca": "Corol·lari",
     "de": "Korollar",
     "fr": "Corollaire",
     "es": "Corolario",
-    "ca": "Corol·lari",
   ),
   "definition": (
     "en": "Definition",
+    "ca": "Definició",
     "de": "Definition",
     "fr": "Définition",
     "es": "Definición",
-    "ca": "Definició",
   ),
   "example": (
     "en": "Example",
+    "ca": "Exemple",
     "de": "Beispiel",
     "fr": "Exemple",
     "es": "Ejemplo",
-    "ca": "Exemple",
   ),
   "remark": (
     "en": "Remark",
+    "ca": "Observació",
     "de": "Bemerkung",
     "fr": "Remarque",
     "es": "Observación",
-    "ca": "Observació",
   ),
   "note": (
     "en": "Note", 
+    "ca": "Nota",
     "de": "Notiz",
     "fr": "Note",
     "es": "Nota",
-    "ca": "Nota",
   ),
   "exercise": (
     "en": "Exercise",
+    "ca": "Exercici",
     "de": "Übung",
     "fr": "Exercice",
     "es": "Ejercicio",
-    "ca": "Exercici",
   ),
   "algorithm": (
     "en": "Algorithm",
+    "ca": "Algorisme",
     "de": "Algorithmus",
     "fr": "Algorithme",
     "es": "Algoritmo",
-    "ca": "Algorisme",
   ),
   "claim": (
     "en": "Claim", 
+    "ca": "Afirmació",
     "de": "Behauptung",
     "fr": "Assertion",
     "es": "Afirmación",
-    "ca": "Afirmació",
   ),
   "axiom": (
     "en": "Axiom", 
+    "ca": "Axioma",
     "de": "Axiom",
     "fr": "Axiome",
     "es": "Axioma",
-    "ca": "Axioma",
   ),
 )
 
 #let proof-dict = (
   "en": "Proof", 
+  "ca": "Demostració",
   "de": "Beweis", 
   "fr": "Démonstration", 
   "es": "Demostración",
-  "ca": "Demostració",
 )
 
+/* End of translations */
+
 #let variant(key) = {
-  let lang_dict = variants.at(key, default: key)
+  let lang-dict = variants.at(key, default: key)
   // If default value was returned
-  return if type(lang_dict) == str {
-    lang_dict
+  return if type(lang-dict) == str {
+    lang-dict
   } else {
-    context lang_dict.at(text.lang, default: lang_dict.at("en", default: key))
+    context lang-dict.at(text.lang, default: lang-dict.at("en", default: key))
   }
 }
 
 #let proof = context proof-dict.at(text.lang, default: "proof")
+
+// This is currently useless, as automatic rtl
+// is not implemented in this package
+#let rtl-list = ("ar",)
