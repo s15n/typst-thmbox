@@ -7,7 +7,7 @@ A typst package providing environments for theorems and proofs.
 Before using any of the features this package has to offer, add the following lines to the top of your document:
 
 ```typ
-#import "@preview/typst-thmbox:0.1.0": *
+#import "@preview/typst-thmbox:0.1.1": *
 
 #show: thmbox-init()
 ```
@@ -166,8 +166,8 @@ Also by default, thmboxes don't break across pages. To enable that, you can use 
 No steps are required when installing from `@preview`. To install this package [locally](https://github.com/typst/packages?tab=readme-ov-file#local-packages), do
 
 ```sh
-cd <data-dir>/typst/packages/local
-git clone https://github.com/s15n/typst-thmbox.git thmbox
+cd <data-dir>/typst/packages/local/thmbox
+git clone https://github.com/s15n/typst-thmbox.git 0.1.1
 ```
 where `<data-dir>` is
 - `$XDG_DATA_HOME` or `~/.local/share` on Linux
