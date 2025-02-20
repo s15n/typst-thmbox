@@ -1,6 +1,8 @@
 # Typst Thmbox
 
-A typst package providing environments for theorems and proofs.
+A typst package providing modern environments for theorems and proofs;
+equipped with predefined variants for all common use cases but also
+the flexibility to create custom ones with ease.
 
 ## Usage
 
