@@ -97,18 +97,28 @@ And thank you to all who already did!
     "fr": "Axiome",
     "es": "Axioma",
   ),
+  "proof": (
+    "en": "Proof", 
+    "ca": "Demostració",
+    "de": "Beweis", 
+    "fr": "Démonstration", 
+    "es": "Demostración",
+  ),
+  "proof-of": (
+    "en": "Proof of", 
+    "fr": "Démonstration",
+  )
 )
 
 #let proof-dict = (
-  "en": "Proof", 
-  "ca": "Demostració",
-  "de": "Beweis", 
-  "fr": "Démonstration", 
-  "es": "Demostración",
 )
 
 /* End of translations */
 
+/// 
+///
+/// - key (): 
+/// -> str
 #let variant(key) = {
   let lang-dict = variants.at(key, default: key)
   // If default value was returned
@@ -118,8 +128,6 @@ And thank you to all who already did!
     context lang-dict.at(text.lang, default: lang-dict.at("en", default: key))
   }
 }
-
-#let proof = context proof-dict.at(text.lang, default: "proof")
 
 // This is currently useless, as automatic rtl
 // is not implemented in this package

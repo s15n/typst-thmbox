@@ -1,5 +1,6 @@
 #import "colors.typ"
 #import "translations.typ"
+#import "util.typ"
 
 #let thm-counter = counter("thmbox")
 #let sans-fonts = ("New Computer Modern Sans",)
@@ -12,21 +13,6 @@
 ///
 /// - counter-level (int): How many numbers the counter should have. 2 makes the numbers have the format X.X, for example.
 #let thmbox-init(counter-level: 2) = (doc) => {
-  // Metadata
-  [
-    #metadata(counter-level) <counter-level>
-  ]
-  
-  thm-counter.update((0,0))
-
-  show heading: it => {
-    if it.level < counter-level {
-      context thm-counter.update(
-        (..counter(heading).get(), 0)
-      )
-    }
-    it
-  }
   // This is needed to make the counters work. If this is not
   // wanted, use `counter-level` 1.
   set heading(numbering: "1.1")
@@ -52,6 +38,8 @@
     it
   }
 
+  show: util.sectioned-counter(thm-counter, level: counter-level)
+
   doc
 }
 
@@ -75,7 +63,7 @@
 /// - bar-thickness (length): The thickness of the colored bar
 /// - sans-fonts (array): What fonts to use in the body if `sans` is true
 /// - title-fonts (array): What fonts should be used in the title bar.
-/// - rtl (boolean): Whether the box should be using a right-to-left layout
+/// - rtl (boolean): Whether the box should be using a right-to-left layout.
 /// - body (content): The body of the box
 /// -> content
 #let thmbox(
@@ -84,16 +72,27 @@
   variant: "Thmbox", 
   title: none, 
   numbering: "1.1", 
+  counter: thm-counter,
   sans: true,
   fill: none,
+  breakable: false,               // TODO: update docs
+  body: [],
   // Advanced styling
   bar-thickness: 3pt,
   sans-fonts: sans-fonts,
   title-fonts: sans-fonts,
   rtl: false,
-  // Body
-  body,
+  // For easy positional args
+  ..args
 ) = {
+  // set values
+  let pa = args.pos()
+  let num-pas = pa.len()
+  let variant = if num-pas == 3 {pa.at(0)} else {variant}
+  let title = if num-pas == 2 or num-pas == 3 {pa.at(num-pas - 2)} else {title}
+  let body = if num-pas > 0 and num-pas <= 3 {pa.at(num-pas - 1)} else {body}
+
+  show figure: set block(breakable: true) if breakable
   return figure(
     caption: none,
     gap: 0em,
@@ -103,14 +102,12 @@
   )[
     // For having a correct counter in refs
     #if numbering != none [
-      #context thm-counter.step(level: query(<counter-level>).first().value)
+      #context counter.step(level: query(label(util.counter-id(counter))).first().value)
       #metadata(
-        loc => std.numbering(numbering, ..(thm-counter.at(loc)))
+        loc => std.numbering(numbering, ..(counter.at(loc)))
       ) <thmbox-numbering>
     ]
 
-    // rtl layout (not possible with context returning content)
-    #let rtl = if rtl == auto {false} else {rtl}
     #set align(if rtl {right} else {left})
     
     #let bar = stroke(paint: color, thickness: bar-thickness)
@@ -130,18 +127,20 @@
       fill: fill,
     )[
       // Title bar
-      #block(
-        above: 0em,
-        below: 1.2em,
-      )[
-        #set text(font: title-fonts, color, weight: "bold")
-        #let counter-display = if numbering != none {
-          context std.numbering(numbering, ..(thm-counter.get()))
-        } else {none}
-        #variant #counter-display
-        #h(1fr)
-        #title
-      ]
+      #if variant != none or title != none {
+        block(
+          above: 0em,
+          below: 1.2em,
+        )[
+          #set text(font: title-fonts, color, weight: "bold")
+          #let counter-display = if numbering != none {
+            context std.numbering(numbering, ..(counter.get()))
+          } else {none}
+          #variant #counter-display
+          #h(1fr)
+          #title
+        ]
+      }
       // Body
       #block(
         inset: (
@@ -182,12 +181,20 @@
 /// - body (content): The actual proof
 /// -> content
 #let proof(
-  title: translations.proof,
-  body
-) = [
-  #[
+  title: translations.variant("proof"),
+  separator: ":",
+  body: [],
+  ..args
+) = {
+  // set values
+  let pa = args.pos()
+  let num-pas = pa.len()
+  let title = if num-pas == 2 [#translations.variant("proof-of") #pa.at(0)] else {title}
+  let body = if num-pas > 0 and num-pas <= 3 {pa.at(num-pas - 1)} else {body}
+
+  [
     #set text(style: "oblique", weight: "bold")
-    #title;:
+    #title;#separator
   ] 
-  #body #qed()
-]
+  [#body #qed()]
+}
