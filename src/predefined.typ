@@ -171,6 +171,30 @@
   ..args
 )
 
+/// Used for exercises, uses a blue color by default.
+/// All args that can be passed to `thmbox` can be passed
+/// to this function, which can override the defaults
+/// specified here as well.
+///
+/// - color (color): Overrides the color to blue
+/// - variant (content): Overrides the variant to "Exercise"
+/// - sans (boolean): Disables using a sans font in the body
+/// - thmbox (function): The `thmbox` function this function is based on. Can be used to plug-in a modified variant
+/// - args (arguments): Any arguments that can be passed to `thmbox`
+/// -> content
+#let exercise(
+  color: colors.light-aqua, 
+  variant: translations.variant("exercise"),
+  sans: false,
+  thmbox: thmbox,
+  ..args
+) = thmbox(
+  color: color, 
+  variant: variant,
+  sans: sans, 
+  ..args
+)
+
 /// Used for algorithms, uses a purple color by default.
 /// All args that can be passed to `thmbox` can be passed
 /// to this function, which can override the defaults
