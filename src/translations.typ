@@ -36,7 +36,7 @@ And thank you to all who already did!
   ),
   "corollary": (
     "en": "Corollary",
-    "ca": "Corol·lari",
+    "ca": "Coroŀlari",
     "de": "Korollar",
     "fr": "Corollaire",
     "es": "Corolario",
