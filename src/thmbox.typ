@@ -10,8 +10,10 @@
 /// 
 /// Use as `#show: thmbox-init()` before using any of the
 /// functions this package provides.
+/// 
+/// Any custom counters that should be used must be initialized with `sectioned-counter`.
 ///
-/// - counter-level (int): How many numbers the counter should have. 2 makes the numbers have the format X.X, for example.
+/// - counter-level (int): How many numbers the default counter should have. 2 makes the numbers have the format X.X, for example.
 #let thmbox-init(counter-level: 2) = (doc) => {
   // This is needed to make the counters work. If this is not
   // wanted, use `counter-level` 1.
@@ -31,15 +33,20 @@
     // using the correct numbers
     let q = query(
       selector(<thmbox-numbering>).after(it.target)
-    ).first()
-    let c = (q.value)(q.location())
-    link(it.target, [#supplement #c])
+    )
+    if q.len() == 0 {
+      link(it.target, supplement)
+    } else {
+      let match = q.first()
+      let c = (match.value)(match.location())
+      link(it.target, [#supplement #c])
+    }
   } else {
     it
   }
 
   show: util.sectioned-counter(thm-counter, level: counter-level)
-
+  
   doc
 }
 
@@ -48,6 +55,9 @@
 /// This is displayed in the title bar and after that, there will be
 /// a counter and a name for the specific definition/theorem/...
 /// it contains (specified in the `title` parameter).
+/// 
+/// Short Usage: `#thmbox[<body>]` or `#thmbox[<title>][<body>]` or `#thmbox[<variant>][<title>][<body>]`.
+/// There is no need to specify title (or variant) as a named parameter
 /// 
 /// Additionally, a colored bar will be on the left, marking the limits of the box.
 /// 
@@ -58,13 +68,15 @@
 /// - variant (content): The variant of the box. For example, "Theorem" or "Definition", etc.
 /// - title (content): A title for what the box is about. For example, "Vector Space" or "Euler's Identity"
 /// - numbering (none | string | function): A numbering string or function for how the number of this box should be displayed (also applies for references). Can be `none` for unnumbered boxes
+/// - counter (counter): The counter to use. Must be initialized with `#show: sectioned-counter(...)`
 /// - sans (boolean): If the body should be using a sans-serif font (which can be changed using the `sans-fonts` parameter)
 /// - fill (none | color): The background color of the box 
+/// - body (content): The body of the box
 /// - bar-thickness (length): The thickness of the colored bar
 /// - sans-fonts (array): What fonts to use in the body if `sans` is true
 /// - title-fonts (array): What fonts should be used in the title bar.
 /// - rtl (boolean): Whether the box should be using a right-to-left layout.
-/// - body (content): The body of the box
+/// - args (arguments): 0-3 positional parameters. Correspond to `body`, `title`, and `variant` (from last to first)
 /// -> content
 #let thmbox(
   // Standard arguments for thmbox
@@ -75,7 +87,6 @@
   counter: thm-counter,
   sans: true,
   fill: none,
-  breakable: false,               // TODO: update docs
   body: [],
   // Advanced styling
   bar-thickness: 3pt,
@@ -92,7 +103,6 @@
   let title = if num-pas == 2 or num-pas == 3 {pa.at(num-pas - 2)} else {title}
   let body = if num-pas > 0 and num-pas <= 3 {pa.at(num-pas - 1)} else {body}
 
-  show figure: set block(breakable: true) if breakable
   return figure(
     caption: none,
     gap: 0em,
@@ -111,6 +121,7 @@
     #set align(if rtl {right} else {left})
     
     #let bar = stroke(paint: color, thickness: bar-thickness)
+    #let opposite-inset = if fill != none {1em - bar-thickness} else {0em}
       
     #block(
       stroke: (
@@ -118,8 +129,8 @@
         right: if rtl {bar} else {none},
       ),
       inset: (
-        left: if rtl {0em} else {1em}, 
-        right: if rtl {1em} else {0em}, 
+        left: if rtl {opposite-inset} else {1em}, 
+        right: if rtl {1em} else {opposite-inset}, 
         top: 0.6em, 
         bottom: 0.6em
       ),
@@ -176,9 +187,13 @@
 
 /// A simple proof environment, consisting of "Proof:" (can also be changed in the `title` parameter),
 /// the actual proof, and a q.e.d. at the end (A q.e.d. can be placed anywhere; it is available as `qed()`).
+/// 
+/// Short Usage: `#proof[<body>]` or `#proof[@<theorem>][<body>]`
 ///
 /// - title (content): What is displayed as the introduction of this proof (by default, "Proof")
+/// - separator (content): What to display after the title (by default, ":")
 /// - body (content): The actual proof
+/// - args (arguments): If two positional arguments are given, the first must be a reference.
 /// -> content
 #let proof(
   title: translations.variant("proof"),

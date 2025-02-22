@@ -106,11 +106,11 @@ And thank you to all who already did!
   ),
   "proof-of": (
     "en": "Proof of", 
-    "fr": "Démonstration",
+    "ca": "Demostració del",
+    "de": "Beweis von", 
+    "fr": "Démonstration du", 
+    "es": "Demostración del",
   )
-)
-
-#let proof-dict = (
 )
 
 /* End of translations */
