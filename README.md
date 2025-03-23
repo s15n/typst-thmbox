@@ -10,7 +10,7 @@ Built to easily write lecture notes with minimal setup.
 Before using any of the features this package has to offer, add the following lines to the top of your document:
 
 ```typ
-#import "@preview/typst-thmbox:0.2.0": *
+#import "@preview/thmbox:0.2.0": *
 
 #show: thmbox-init()
 ```
