@@ -142,6 +142,7 @@
         block(
           above: 0em,
           below: 1.2em,
+          sticky: true
         )[
           #set text(font: title-fonts, color, weight: "bold")
           #let counter-display = if numbering != none {
