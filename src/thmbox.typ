@@ -92,6 +92,7 @@
   bar-thickness: 3pt,
   sans-fonts: sans-fonts,
   title-fonts: sans-fonts,
+  title-separator: h(1fr),
   rtl: false,
   // For easy positional args
   ..args
@@ -146,10 +147,10 @@
         )[
           #set text(font: title-fonts, color, weight: "bold")
           #let counter-display = if numbering != none {
+            " "
             context std.numbering(numbering, ..(counter.get()))
           } else {none}
-          #variant #counter-display
-          #h(1fr)
+          #variant;#counter-display;#title-separator
           #title
         ]
       }
