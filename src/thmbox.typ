@@ -183,7 +183,7 @@
   h(1fr)
   context { 
     set text(size: 0.8 * text.size)
-    "☐"
+    "□"
   }
 }
 
