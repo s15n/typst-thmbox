@@ -19,6 +19,7 @@ And thank you to all who already did!
     "de": "Satz",
     "fr": "Théorème",
     "es": "Teorema",
+    "it": "Teorema"
   ),
   "proposition": (
     "en": "Proposition",
@@ -26,6 +27,7 @@ And thank you to all who already did!
     "de": "Proposition",
     "fr": "Proposition",
     "es": "Proposición",
+    "it": "Proposizione"
   ),
   "lemma": (
     "en": "Lemma",
@@ -33,6 +35,7 @@ And thank you to all who already did!
     "de": "Lemma",
     "fr": "Lemme",
     "es": "Lema",
+    "it": "Lemma"
   ),
   "corollary": (
     "en": "Corollary",
@@ -40,6 +43,7 @@ And thank you to all who already did!
     "de": "Korollar",
     "fr": "Corollaire",
     "es": "Corolario",
+    "it": "Corollario"
   ),
   "definition": (
     "en": "Definition",
@@ -47,6 +51,7 @@ And thank you to all who already did!
     "de": "Definition",
     "fr": "Définition",
     "es": "Definición",
+    "it": "Definizione"
   ),
   "example": (
     "en": "Example",
@@ -54,6 +59,7 @@ And thank you to all who already did!
     "de": "Beispiel",
     "fr": "Exemple",
     "es": "Ejemplo",
+    "it": "Esempio"
   ),
   "remark": (
     "en": "Remark",
@@ -61,6 +67,7 @@ And thank you to all who already did!
     "de": "Bemerkung",
     "fr": "Remarque",
     "es": "Observación",
+    "it": "Osservazione"
   ),
   "note": (
     "en": "Note", 
@@ -68,6 +75,7 @@ And thank you to all who already did!
     "de": "Notiz",
     "fr": "Note",
     "es": "Nota",
+    "it": "Nota"
   ),
   "exercise": (
     "en": "Exercise",
@@ -75,6 +83,7 @@ And thank you to all who already did!
     "de": "Übung",
     "fr": "Exercice",
     "es": "Ejercicio",
+    "it": "Esercizio"
   ),
   "algorithm": (
     "en": "Algorithm",
@@ -82,6 +91,7 @@ And thank you to all who already did!
     "de": "Algorithmus",
     "fr": "Algorithme",
     "es": "Algoritmo",
+    "it": "Algoritmo"
   ),
   "claim": (
     "en": "Claim", 
@@ -89,6 +99,7 @@ And thank you to all who already did!
     "de": "Behauptung",
     "fr": "Assertion",
     "es": "Afirmación",
+    "it": "Asserzione"
   ),
   "axiom": (
     "en": "Axiom", 
@@ -96,6 +107,7 @@ And thank you to all who already did!
     "de": "Axiom",
     "fr": "Axiome",
     "es": "Axioma",
+    "it": "Assioma"
   ),
   "proof": (
     "en": "Proof", 
@@ -103,6 +115,7 @@ And thank you to all who already did!
     "de": "Beweis", 
     "fr": "Démonstration", 
     "es": "Demostración",
+    "it": "Dimostrazione"
   ),
   "proof-of": (
     "en": "Proof of", 
@@ -110,6 +123,7 @@ And thank you to all who already did!
     "de": "Beweis von", 
     "fr": "Démonstration du", 
     "es": "Demostración del",
+    "it": "Dimostrazione del"
   )
 )
 
