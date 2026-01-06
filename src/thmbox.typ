@@ -73,6 +73,7 @@
 /// - fill (none | color): The background color of the box 
 /// - body (content): The body of the box
 /// - bar-thickness (length): The thickness of the colored bar
+/// - bar-color (color): The color of the colored bar
 /// - sans-fonts (array): What fonts to use in the body if `sans` is true
 /// - title-fonts (array): What fonts should be used in the title bar.
 /// - rtl (boolean): Whether the box should be using a right-to-left layout.
@@ -90,6 +91,7 @@
   body: [],
   // Advanced styling
   bar-thickness: 3pt,
+  bar-color: none,
   sans-fonts: sans-fonts,
   title-fonts: sans-fonts,
   title-separator: h(1fr),
@@ -121,7 +123,8 @@
 
     #set align(if rtl {right} else {left})
     
-    #let bar = stroke(paint: color, thickness: bar-thickness)
+    #if bar-color == none {bar-color = color}
+    #let bar = stroke(paint: bar-color, thickness: bar-thickness)
     #let opposite-inset = if fill != none {1em - bar-thickness} else {0em}
       
     #block(
