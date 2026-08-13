@@ -31,7 +31,7 @@ And thank you to all who already did!
     "es": "Proposición",
     "it": "Proposizione",
     "nl": "Propositie",
-    "ru": "Предположение"
+    "ru": "Предложение"
   ),
   "lemma": (
     "en": "Lemma",
@@ -151,7 +151,7 @@ And thank you to all who already did!
     "es": "Demostración del",
     "it": "Dimostrazione del"
     "nl": "Bewijs van",
-    "ru": "Доказательство"
+    "ru": "Доказательство:"
   )
 )
 
