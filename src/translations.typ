@@ -20,7 +20,8 @@ And thank you to all who already did!
     "fr": "Théorème",
     "es": "Teorema",
     "it": "Teorema",
-    "nl": "Stelling"
+    "nl": "Stelling",
+    "ru": "Теорема"
   ),
   "proposition": (
     "en": "Proposition",
@@ -29,7 +30,8 @@ And thank you to all who already did!
     "fr": "Proposition",
     "es": "Proposición",
     "it": "Proposizione",
-    "nl": "Propositie"
+    "nl": "Propositie",
+    "ru": "Предположение"
   ),
   "lemma": (
     "en": "Lemma",
@@ -38,7 +40,8 @@ And thank you to all who already did!
     "fr": "Lemme",
     "es": "Lema",
     "it": "Lemma",
-    "nl": "Lemma"
+    "nl": "Lemma",
+    "ru": "Лемма"
   ),
   "corollary": (
     "en": "Corollary",
@@ -47,7 +50,8 @@ And thank you to all who already did!
     "fr": "Corollaire",
     "es": "Corolario",
     "it": "Corollario",
-    "nl": "Gevolg"
+    "nl": "Gevolg",
+    "ru": "Следствие"
   ),
   "definition": (
     "en": "Definition",
@@ -56,7 +60,8 @@ And thank you to all who already did!
     "fr": "Définition",
     "es": "Definición",
     "it": "Definizione",
-    "nl": "Definitie"
+    "nl": "Definitie",
+    "ru": "Определение"
   ),
   "example": (
     "en": "Example",
@@ -65,7 +70,8 @@ And thank you to all who already did!
     "fr": "Exemple",
     "es": "Ejemplo",
     "it": "Esempio",
-    "nl": "Voorbeeld"
+    "nl": "Voorbeeld",
+    "ru": "Пример"
   ),
   "remark": (
     "en": "Remark",
@@ -74,7 +80,8 @@ And thank you to all who already did!
     "fr": "Remarque",
     "es": "Observación",
     "it": "Osservazione",
-    "nl", "Opmerking"
+    "nl", "Opmerking",
+    "ru": "Замечание"
   ),
   "note": (
     "en": "Note", 
@@ -83,7 +90,8 @@ And thank you to all who already did!
     "fr": "Note",
     "es": "Nota",
     "it": "Nota",
-    "nl": "Notitie"
+    "nl": "Notitie",
+    "ru": "Примечание"
   ),
   "exercise": (
     "en": "Exercise",
@@ -92,7 +100,8 @@ And thank you to all who already did!
     "fr": "Exercice",
     "es": "Ejercicio",
     "it": "Esercizio",
-    "nl": "Opgave"
+    "nl": "Opgave",
+    "ru": "Упражнение"
   ),
   "algorithm": (
     "en": "Algorithm",
@@ -101,7 +110,8 @@ And thank you to all who already did!
     "fr": "Algorithme",
     "es": "Algoritmo",
     "it": "Algoritmo",
-    "nl": "Algoritme"
+    "nl": "Algoritme",
+    "ru": "Алгоритм"
   ),
   "claim": (
     "en": "Claim", 
@@ -110,7 +120,8 @@ And thank you to all who already did!
     "fr": "Assertion",
     "es": "Afirmación",
     "it": "Asserzione",
-    "nl": "Claim"
+    "nl": "Claim",
+    "ru": "Утверждение"
   ),
   "axiom": (
     "en": "Axiom", 
@@ -119,7 +130,8 @@ And thank you to all who already did!
     "fr": "Axiome",
     "es": "Axioma",
     "it": "Assioma",
-    "nl": "Axioma"
+    "nl": "Axioma",
+    "ru": "Аксиома"
   ),
   "proof": (
     "en": "Proof", 
@@ -128,7 +140,8 @@ And thank you to all who already did!
     "fr": "Démonstration", 
     "es": "Demostración",
     "it": "Dimostrazione",
-    "nl": "Bewijs"
+    "nl": "Bewijs",
+    "ru": "Доказательство"
   ),
   "proof-of": (
     "en": "Proof of", 
@@ -137,7 +150,8 @@ And thank you to all who already did!
     "fr": "Démonstration du", 
     "es": "Demostración del",
     "it": "Dimostrazione del"
-    "nl": "Bewijs van"
+    "nl": "Bewijs van",
+    "ru": "Доказательство"
   )
 )
 
