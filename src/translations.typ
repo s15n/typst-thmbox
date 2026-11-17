@@ -20,8 +20,9 @@ And thank you to all who already did!
     "fr": "Théorème",
     "es": "Teorema",
     "it": "Teorema",
+    "ja": "定理",
     "nl": "Stelling",
-    "ru": "Теорема"
+    "ru": "Теорема",
   ),
   "proposition": (
     "en": "Proposition",
@@ -30,8 +31,9 @@ And thank you to all who already did!
     "fr": "Proposition",
     "es": "Proposición",
     "it": "Proposizione",
+    "ja": "命題",
     "nl": "Propositie",
-    "ru": "Предложение"
+    "ru": "Предложение",
   ),
   "lemma": (
     "en": "Lemma",
@@ -40,8 +42,9 @@ And thank you to all who already did!
     "fr": "Lemme",
     "es": "Lema",
     "it": "Lemma",
+    "ja": "補題",
     "nl": "Lemma",
-    "ru": "Лемма"
+    "ru": "Лемма",
   ),
   "corollary": (
     "en": "Corollary",
@@ -50,8 +53,9 @@ And thank you to all who already did!
     "fr": "Corollaire",
     "es": "Corolario",
     "it": "Corollario",
+    "ja": "系",
     "nl": "Gevolg",
-    "ru": "Следствие"
+    "ru": "Следствие",
   ),
   "definition": (
     "en": "Definition",
@@ -60,8 +64,9 @@ And thank you to all who already did!
     "fr": "Définition",
     "es": "Definición",
     "it": "Definizione",
+    "ja": "定義",
     "nl": "Definitie",
-    "ru": "Определение"
+    "ru": "Определение",
   ),
   "example": (
     "en": "Example",
@@ -70,8 +75,9 @@ And thank you to all who already did!
     "fr": "Exemple",
     "es": "Ejemplo",
     "it": "Esempio",
+    "ja": "例",
     "nl": "Voorbeeld",
-    "ru": "Пример"
+    "ru": "Пример",
   ),
   "remark": (
     "en": "Remark",
@@ -80,18 +86,20 @@ And thank you to all who already did!
     "fr": "Remarque",
     "es": "Observación",
     "it": "Osservazione",
-    "nl", "Opmerking",
-    "ru": "Замечание"
+    "ja": "注意",
+    "nl": "Opmerking",
+    "ru": "Замечание",
   ),
   "note": (
-    "en": "Note", 
+    "en": "Note",
     "ca": "Nota",
     "de": "Notiz",
     "fr": "Note",
     "es": "Nota",
     "it": "Nota",
+    "ja": "ノート",
     "nl": "Notitie",
-    "ru": "Примечание"
+    "ru": "Примечание",
   ),
   "exercise": (
     "en": "Exercise",
@@ -100,8 +108,9 @@ And thank you to all who already did!
     "fr": "Exercice",
     "es": "Ejercicio",
     "it": "Esercizio",
+    "ja": "練習問題",
     "nl": "Opgave",
-    "ru": "Упражнение"
+    "ru": "Упражнение",
   ),
   "algorithm": (
     "en": "Algorithm",
@@ -110,56 +119,62 @@ And thank you to all who already did!
     "fr": "Algorithme",
     "es": "Algoritmo",
     "it": "Algoritmo",
+    "ja": "アルゴリズム",
     "nl": "Algoritme",
-    "ru": "Алгоритм"
+    "ru": "Алгоритм",
   ),
   "claim": (
-    "en": "Claim", 
+    "en": "Claim",
     "ca": "Afirmació",
     "de": "Behauptung",
     "fr": "Assertion",
     "es": "Afirmación",
     "it": "Asserzione",
+    "ja": "主張",
     "nl": "Claim",
-    "ru": "Утверждение"
+    "ru": "Утверждение",
   ),
   "axiom": (
-    "en": "Axiom", 
+    "en": "Axiom",
     "ca": "Axioma",
     "de": "Axiom",
     "fr": "Axiome",
     "es": "Axioma",
     "it": "Assioma",
+    "ja": "公理",
     "nl": "Axioma",
-    "ru": "Аксиома"
+    "ru": "Аксиома",
   ),
   "proof": (
-    "en": "Proof", 
+    "en": "Proof",
     "ca": "Demostració",
-    "de": "Beweis", 
-    "fr": "Démonstration", 
+    "de": "Beweis",
+    "fr": "Démonstration",
     "es": "Demostración",
     "it": "Dimostrazione",
+    "ja": "証明",
     "nl": "Bewijs",
-    "ru": "Доказательство"
+    "ru": "Доказательство",
   ),
   "proof-of": (
-    "en": "Proof of", 
+    "en": "Proof of",
     "ca": "Demostració del",
-    "de": "Beweis von", 
-    "fr": "Démonstration du", 
+    "de": "Beweis von",
+    "fr": "Démonstration du",
     "es": "Demostración del",
-    "it": "Dimostrazione del"
+    "it": "Dimostrazione del",
+    // Need another parameter: [pa.at(0) の定理]
+    "ja": "Proof of",
     "nl": "Bewijs van",
-    "ru": "Доказательство:"
-  )
+    "ru": "Доказательство:",
+  ),
 )
 
 /* End of translations */
 
-/// 
 ///
-/// - key (): 
+///
+/// - key ():
 /// -> str
 #let variant(key) = {
   let lang-dict = variants.at(key, default: key)
